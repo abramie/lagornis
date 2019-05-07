@@ -1,0 +1,500 @@
+/* Paramètre de style pour chaque élément, enlève les marges automatiques, pour ne laisser que les marges voulues
+ s'afficher */
+*{
+    margin: 0;
+}
+
+/* Paramètre sur la taille de la page, l\'affichage se fait sur toute la hauteur de la page */
+html{
+    height: 100%;
+}
+
+/* Paramètre pour changer la font des éléments du body */
+body{
+    height: 100%;
+
+    font-family: 'OpenSansRegular', Helvetica, Arial, sans-serif;
+}
+
+/**/
+.champ_compte
+{
+    padding: 10px;
+    position: relative;
+    -moz-border-radius:8px;
+    -webkit-border-radius:8px;
+    margin-bottom: 20px;
+    border: 1px solid #000000;
+}
+
+/* Paramètre pour changer l'apparence des fieldset */
+.field_base
+{
+    padding: 10px;
+    position: relative;
+    background-color: #73939b;
+    -moz-border-radius:8px;
+    -webkit-border-radius:8px;
+    margin-bottom: 20px;
+    border: 1px solid #000000;
+}
+
+
+
+/* Paramètre pour changer l'apparence des legendes des fieldset */
+legend
+{
+    font-size:20px;
+    font-weight:bold;
+    margin-bottom: 0px;
+    width: 40%;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    padding: 5px 5px 5px 10px;
+    background-color: #ffffff;
+}
+
+
+/******** ICI, "POSITION : RELATIVE" PERMET DE S'ASSURER QUE LES ÉLÉMENTS SE DISPOSERONT COMME VOULU *******/
+
+/* Paramètres pour la div contenant les éléments de la page (header, content et footer), d'une taille minimal de 100%,
+prévenant d'un aggrandissement */
+#container{
+    min-height:100%;
+    position: relative;
+}
+
+/* Paramètres de la Div contenant à la fois le banner et le footer */
+.row{
+    position: relative;
+    margin: 0;
+}
+
+/* Paramètres de la Div contenant les éléments du content de la page */
+.row-haut{
+    position: relative;
+    margin: 0 auto;
+    width: 40%;
+    margin-top : 25px;
+}
+
+.lecteur{
+background-color: #6c757d;
+}
+/* Paramètres pour l'affichage indiquant que le javascript n'est pas activé sur la page courante */
+#erreur{
+    text-align: center;
+    color: red;
+    font-size: 20px;
+}
+
+/* Paramètre pour la taille des objets graphiques select permettant l'affichage de données de la bdd dans les formulaires
+de création de rv individuels/collectifs. Plus la taille est grande en pixels, plus la boite contenant les valeurs de la
+bdd est large */
+.multiple
+{
+  width: 300px;
+}
+
+/* Paramètre pour la couleur des éléments contenus (option) dans les boites de sélections (exemple : conseillères) dans
+ les formulaires de rv */
+.multipleOption
+{
+  color:black;
+}
+
+/* Paramètre pour l'affichage du bouton permettant l'ajout de nouveaux lieux pour un rv collectif,
+ici, une marge de 15px de hauteur */
+.add_lieu_domActi{
+  margin-top: 15px;
+}
+
+/* Paramètre pour colorier l'étoile en rouge, indiquant quels champs sont obligatoires pour les formulaires */
+#obligatoire
+{
+  color: red;
+}
+
+/* Paramètre de la div correspondante permettant de s'assurer que les éléments graphiques flottants s'adaptent avec
+les autres : éviter qu'un élément n'en cache un autre etc */
+.clear_float{
+	clear : both;
+}
+
+/* Les div qui appartiennent à cette classe ont leur contenu cachés de base, à l'aide de display:none */
+.masque_element {
+    display: none;
+}
+
+/* Paramètres pour créer le menu de liens à gauche de chaque pages : Chaque élément est flexible, c'est à dire
+qu'ils sont plus à même d'être positionné à un endroit de la page, s'en être modifié par les autres éléments graphiques*/
+.alignMenu {
+  display : flex;
+  justify-content : space-between;
+  align-items : center;
+  padding-right: 10px;
+}
+
+/* Paramètres pour les divisions affichant des informations : une marge en haut, de 25 px, pour ne pas que les
+éléments graphiques ne soient collés */
+.haut{
+	margin-top : 25px;
+}
+
+/* Paramètre pour un champ contenant une image : l'élément est flottant (l'image), à gauche de l'écran */
+p img{
+	float:left;
+}
+
+/* Paramètres pour l'affichage du nom de l'utilisateur courant : positionné à gauche, avec un léger décalage par
+rapport au haut de la page*/
+.bv{
+	float:left;
+	padding-top:40px;
+}
+
+/* Paramètres pour l'affichage de la div contenant le texte pour l'affichage des informations relatives au footer */
+#legals {
+    margin-right: auto;
+    margin-left: auto;
+    color: #FFF;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 0.75em;
+    background-color: #009b95;
+}
+
+/* PARAMÈTRES QUI CACHENT OU CHANGE L'AFFICHAGE DE CERTAINS ELEMENTS EN FONCTION DE LA TAILLE DE L'ECRAN */
+@media screen and (max-width: 979px) {
+      .ban{
+        display: none;
+      }
+    }
+
+@media screen and (max-width: 480px) {
+      .logo{
+		position:relative;
+      }
+    }
+
+@media screen and (min-width: 481px) {
+      .logo{
+		position:relative;
+		z-index:4;
+      }
+    }
+@media screen and (min-width: 575px) {
+      .public-image-tag-m{
+		float:right;
+      }
+    }
+	
+@media screen and (max-width: 576px) {
+	  #public-image-menu-m{
+		margin-bottom:25px;
+      }
+    }
+/***********************************************************************************************************/
+
+/* Centre le texte des éléments associés*/
+.center{
+	text-align: center;
+}
+
+/* Créer un léger espacement entre les images et les éléments graphiques au dessus */
+img{
+	margin-bottom : 25px;
+}
+
+/* Enlève les styles pour les listes ordonnées, désordonnées et liste des descriptions */
+ol, ul, dl {
+    list-style: none;
+}
+
+/* Paramètres pour le style du lien permettant de remonter tout en haut de la page, ici le clear both est pour
+ éviter que l'élément ne se place au dessus d'un autre, ce qui n'aurait plus trop de sens */
+.top {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 0.8em;
+    text-align: center;
+	clear: both;
+}
+
+/* Paramètres pour l'affichage des zones grises autour de la bannière : le repeat permet de ne pas avoir uniquement
+des traits, mais d'avoir des zones remplies */
+#banner-title-wrap {
+    background-color: #EBEBEB;
+    background-image: url(../img/hachures-blanc-20px.png);
+    background-repeat: repeat-x;
+    background-position: left top;
+	border-bottom:1px solid #009b95;
+	padding-bottom : 15px;
+}
+
+/* Paramètres pour l'affichage des traits blancs au niveau de la bannière, et aussi mettre de la couleur à coté de
+l'image du safire, avec une taille pré-définie */
+#banner-title {
+    background-color: #009b95;
+    background-image: url(../img/hachures-blanc-20px.png), url(../img/visuel-bandeau.jpg);
+    background-position: left top, right top;
+    background-repeat: repeat-x, no-repeat;
+    color: #FFF;
+  	width: 940px;
+  	height: 180px;
+  	margin-right: auto;
+  	margin-left: auto;
+}
+
+/* Paramètres pour le titre de la bannière (SAFIRE), qui est un lien pour accéder au site du safire  */
+#banner-title a {
+    color: #FFF;
+    padding-top: 40px;
+    display: block;
+    height: 140px;
+    width: 370px;
+    background-image: url(../img/bck-apostrophe.svg);
+    background-position: 20px 40px;
+    background-repeat: no-repeat;
+    padding-left: 90px;
+    padding-right: 20px;
+    text-transform: uppercase;
+    font-family: 'OpenSansCondensedLightRegular', 'OpenSansCondensedBold', Helvetica, Arial, sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 1.8em;
+    line-height: 1.2em;
+}
+
+/* Paramètres pour le texte de la bannière (en dessous de SAFIRE), qui est un lien pour accéder au site du safire */
+#banner-title a span {
+    display: block;
+    text-transform: none;
+    font-size: 0.6em;
+    line-height: 1em;
+    padding-top: 10px;
+}
+
+/* Enlève l'effet de style de base des liens cliquables : ici, l'effet souligné est désactivé */
+#banner-title a:hover {
+  text-decoration: none;  
+}
+
+/* Taille donnée au titre de niveau 1 */
+h1{
+    font-size: 1em;
+}
+
+/* Marge supérieur pour les titres de niveau 2 avec les éléments graphiques au-dessus */
+h2{
+	margin-top : 15px;
+}
+
+/* Marge inférieur pour les éléments qui s'affichent en fonction de l'ajout ou non d'un form (ici, c'est pour ça
+que c'est utilisé) */
+.espacement_bas {
+    margin-bottom: 15px;
+}
+
+/* Paramètres pour l'affichage des éléments en haut des form, première zone de champ */
+.up{
+	border-bottom:1px solid #009b95;
+	padding-bottom : 15px;
+}
+
+/* Paramètre, qui simule un fieldset pour les champs des formu de prises de rdv*/
+.down-border{
+	border-bottom:3px solid #009b95;
+	padding-bottom : 15px;
+}
+
+/****************** Paramètres pour le menu de l'accueil, celui qui permet de naviguer entre les pages ******************/
+.public-image-tag-m {
+  top: 15px;
+  width: 200px;
+  margin: 0;
+  list-style: none;
+  border-color : #009b95;
+}
+.public-image-tag-m li {
+  line-height: 40px;
+}
+.public-image-tag-m li a {
+  text-decoration: none;
+  color: #009b95;
+}
+.public-image-tag-m li a:hover {
+  cursor: pointer;
+  text-decoration: none;
+  color: #a40004;
+  background: rgba(211, 211, 211, 0.2);
+}
+.public-image-tag-m li a:active, .public-image-tag-m li a:focus {
+  cursor: pointer;
+  text-decoration: none;
+}
+/************************************************************************************************************/
+
+/* Marge supérieur des tableaux avec les éléments sup */
+table{
+	margin-top : 10px;
+}
+
+/* Couleur des liens cliquables */
+a{
+	color : #FF6B00;
+}
+
+/* Marge supérieur des textarea des formul avec les éléments supp */
+textarea{
+	margin-top : -25px;
+}
+
+/************ Paramètres pour le menu à gauche de chaque page, celui qui permet de naviguer entre les pages ***********/
+
+.public-image-category-a {
+  list-style: none;
+  text-decoration: none;
+  color: #009b95;
+  border:1px solid #009b95;
+  font-weight:700;
+  padding-left:10px;
+}
+.public-image-category-a:hover {
+  cursor: pointer;
+  text-decoration: none;
+  color: #a40004;
+  background: rgba(211, 211, 211, 0.2);
+}
+.public-image-category-a:active, .public-image-category-a:focus {
+  cursor: pointer;
+  text-decoration: none;
+}
+.public-image-category-a:first-letter {
+  text-transform: uppercase;
+}
+
+.public-image-tag-a {
+  margin-left: -25px;
+  list-style: none;
+  text-decoration: none;
+  color: #999999;
+}
+.public-image-tag-a:hover {
+  cursor: pointer;
+  text-decoration: none;
+  color: #337cb7;
+  background: rgba(211, 211, 211, 0.2);
+}
+.public-image-tag-a:active, .public-image-tag-a:focus {
+  cursor: pointer;
+  text-decoration: none;
+}
+.public-image-tag-a:first-letter {
+  text-transform: uppercase;
+}
+/************************************************************************************************************/
+
+/* Colorise le champ du menu cliqué */
+.selected {
+  background: rgba(174,171,172,0.2);
+}
+
+/****** Effet pour les liens du menu de l'accueil *****/
+.plaque-index {
+  -webkit-box-shadow: 3px 3px 3px #009b95; /* pour la prise en charge chrome */
+  -o-box-shadow: 3px 3px 3px #009b95; /* pour la prise en charge opera */
+  box-shadow: 3px 3px 3px #009b95;
+  width: 100%;
+  margin-bottom: 25px;
+}
+
+.plaque-index:hover {
+  -webkit-box-shadow: 1px 1px 3px #a40004; /* pour la prise en charge chrome */
+  -o-box-shadow: 1px 1px 3px #a40004; /* pour la prise en charge opera */
+  box-shadow: 1px 1px 3px #a40004;
+  width: 100%;  
+}
+
+
+.text-index {
+  font-size: 1.4em;
+  color : #000;
+  text-align: center;
+  padding-bottom: 15px;
+  padding-top: 15px;
+}
+
+.text-index:hover {  
+  color : #a40004;  
+  font-weight: bold;
+}
+
+.plaque-index a {
+  text-decoration: none;
+}
+
+/******************************************************/
+
+/* Style pour les couleurs des boutons radio quand ils sont check */
+.custom-control-input:checked ~ .custom-control-indicator {
+  background-color: #007BFF;
+}
+
+/* Champs qui ne sont pas cliquables : grisés */
+.statut_disabled {
+  color : #868E96;
+  margin-bottom: 3px;
+}
+
+/* Met le titre en gras quand on passe sur un paramètre (ici, les h5) */
+.titreForm:hover {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+
+
+/* Paramètre permettant la mise en forme des 4 champs du tableaux */
+th
+{
+    width: 10%;
+    margin: 0 auto;
+}
+
+/* Met du style blanc pour le texte des formulaires, afin d'être visible*/
+.lab_white
+{
+    color: white;
+    text-shadow: #000000 1px 1px;
+}
+
+/* Positionne certains des boutons d'ajouts dans les formulaires de rv*/
+.bouton-position
+{
+    margin-bottom: 20px;
+}
+
+.pop-up
+{
+    z-index:10;
+
+    position: absolute;
+    margin-top: 23px;
+    margin-left: -35px;
+    color: #09c;
+    background:rgba(0,0,0,.9);
+    padding:15px;
+    border-radius:3px;
+    box-shadow:0 0 2px rgba(0,0,0,.5);
+    transform:scale(0) rotate(-12deg);
+    transition:all .25s;
+    opacity:0;
+}
+
+p:hover .pop-up, p:focus .pop-up
+{
+    transform:scale(1) rotate(0);
+    opacity: 1;
+}

@@ -1,0 +1,10 @@
+.spoiler{
+ cursor: pointer;
+  display: inline;
+  padding: 5px;
+  border: 1px solid transparent;
+}
+.spoiler.open{
+ background-color: #eee;
+ border-color: red;
+}

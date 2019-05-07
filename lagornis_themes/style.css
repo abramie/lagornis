@@ -1,0 +1,63 @@
+/*
+ Theme Name:   Lagornis_theme
+ Theme URI:    http://example.com/twenty-fifteen-child/
+ Description:  Theme de lagornis
+ Author:       Jeremy
+ Author URI:   monbacasable.fr
+ Template:     twentythirteen
+ Version:      1.0.0
+ License:      GNU General Public License v2 or later
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+ Tags:         light, dark, two-columns, right-sidebar, responsive-layout, accessibility-ready
+ Text Domain:  twenty-fifteen-child
+*/
+
+
+h1{
+	font-size: 48px;
+	margin: 33px 0;
+	font-family: "Lucida Calligraphy";
+}
+
+
+.lourde{
+	color: blue;
+}
+.legere{
+	color:green;
+}
+.epique{
+	color:purple;
+}
+.legendaire{
+	color:gold;
+}
+
+.ancien{
+	color: orange;
+}
+
+.distance{
+	color: orange;
+}
+.jet{
+	color: navy;
+}
+.hast{
+	color: red;
+}
+
+.simple{
+	color:greenyellow;
+}
+
+.line_color{
+    cursor: pointer;
+}
+
+.nom{
+	width: 140px;
+}
+
+
+
