@@ -22,23 +22,33 @@ $DB_motdepasse = BDD_password; 							// Mot de passe pour accéder à la base
 
 try
 {
-    //$id = $_GET['id'];
-    
+    $id = $_GET['id'];
+    //Initialisation du PDO
     $bdd = new PDO($DB_dsn,$DB_utilisateur,$DB_motdepasse, array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
     
+    //Recuperation des données du sort. 
+    //Prochainement faire le changement avec de l'ajax (ou un truc plus fun) pour eviter de tous prendre.
     $req = $bdd->prepare('SELECT * FROM Sorts WHERE ID = :id');
-	$succes = $req->execute(array(':id' => $_GET['id']));
-	
-    //if(!$succes)echo "plante";
-	$p = $bdd->prepare('SELECT * FROM Effet_de_sort WHERE ID_sort = :id');
-			
+	$succes = $req->execute(array(':id' => $id));
+	$donnee = $req->fetch();
+    
+    
+    //Preparation des requettes pour le lecteur.
+    
+	$p = $bdd->prepare('SELECT * FROM Effet_de_sort WHERE ID_sort = :id');	
 	$rarete = $bdd->prepare('SELECT Rarete FROM Rarete_sort WHERE id = :num');
     $ecole = $bdd->prepare('SELECT * FROM Ecoles_de_magie, Lien_ecoles_sorts WHERE Lien_ecoles_sorts.ID_sort = :num AND Lien_ecoles_sorts.ID_ecole = Ecoles_de_magie.ID');
 	$aspects = $bdd->prepare('SELECT * FROM Aspects WHERE ID_sort = :num');
 	
-    $donnee = $req->fetch();
+    
     get_header('sorts');
-    echo "<title>". get_bloginfo( 'name', 'display' ). ' | '. $donnee['Nom_du_sort'] . "</title>";
+    
+    
+    if($donnee ){
+        echo "<title>". get_bloginfo( 'name', 'display' ). ' | '. $donnee['Nom_du_sort'] . "</title>";
+    }else{
+        echo "<title>". get_bloginfo( 'name', 'display' ). ' | '. "non trouvé" . "</title>";
+    }
 ?>
 	<div id="primary" class="content-area">
 		<div id="content" class="site-content" role="main">
@@ -54,12 +64,14 @@ try
 							<?php the_post_thumbnail(); ?>
 						</div>
 						<?php endif; ?>
-						<h1 class="entry-title"><?php echo $donnee['Nom_du_sort']; ?></h1>
+						<h1 class="entry-title"><?php if($donnee) {echo $donnee['Nom_du_sort']; } else echo "Sort non trouvé"; ?></h1>
 					</header><!-- .entry-header -->
 					<div class="entry-content">
 						<?php //the_content(); 
+						if($donnee ){
+                            require_once("sorts/lecteur2.php");
+                        }
 						
-						require_once("sorts/lecteur2.php");
 					
 						?>
 						<?php

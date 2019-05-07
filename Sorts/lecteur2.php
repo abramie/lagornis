@@ -1,11 +1,12 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: jerem
- * Date: 26/06/18
- * Time: 22:54
+ * @author : Jérémy Rousseau
+ *
+ * Affiche les infos lié à un sort
+ * TODO : En faire un objet, que la génération des requettes soit ici, et sa devrait simplifier le passage en dynamique avec ajax.
  */
  //ini_set('display_errors',1);
+ 
 ?>
 
 <?php echo $donnee['Description']; ?>
@@ -24,7 +25,8 @@ if($donnee['Cout_par_tour'] != 0){
 </br>
 <?php echo "Nombres d'actions :" ;echo $donnee['nbActions']; ?>
 
-<?php $rarete->execute(array(':num' => $donnee['rarete']) ); 
+<?php 
+$rarete->execute(array(':num' => $donnee['rarete']) ); 
         
         echo $rarete->fetch()['Rarete'];
 ?>

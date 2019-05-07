@@ -4,7 +4,7 @@ require_once ("include/head.php");
 
 require_once("include/gestion_connexion.php");
 
-
+//Redirige vers l'ecran de connexion en cas d'acces interdit.
 verification_connexion();
 
 ?>
