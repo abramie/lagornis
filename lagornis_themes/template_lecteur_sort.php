@@ -106,3 +106,4 @@ catch (Exception $e)
 }
  //get_sidebar(); 
 get_footer(); ?>
+<script type="text/javascript" src="http://lagornis.monbacasable.fr/wp-content/plugins/shortcodes-ultimate/assets/js/other-shortcodes.js?ver=5.2.0"></script>

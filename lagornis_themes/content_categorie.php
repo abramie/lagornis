@@ -1,6 +1,6 @@
 <?php
 /**
- * The default template for displaying content
+ * Le template de quand on est en rédaction
  *
  * Used for both single and index/archive/search.
  *
@@ -55,8 +55,19 @@
 					'link_after'  => '</span>',
 				)
 			);
+              
+            
             
 		?>
+        <?php
+        //Affiche les enfants, uniquement si il y en a.
+        //Un niveau de descente.
+            $children = wp_list_pages( 'title_li='.get_the_title(get_the_ID()).'&child_of='.$post->ID.'&echo=0&depth=1' );
+            if ( $children) : ?>
+            <ul>
+                <?php echo $children; ?>
+            </ul>
+<?php endif; ?>
 	</div><!-- .entry-content -->
 	<?php endif; ?>
 

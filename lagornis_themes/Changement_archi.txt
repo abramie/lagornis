@@ -1,0 +1,12 @@
+Ce qu'il faut faire : 
+
+Les articles deviennents de posts (easy, j'ai le plugin) 
+mais pour remplacer les categories il faut definir l'archi de "page parente" 
+Sur les pages de categorie haute, il y aura le template categorie, qui appelle wp_list_pages("voir les parametres, mais un truc child")
+pour afficher la liste des pages filles, avec des liens
+
+
+je perd les categories, mais les pages sont mieux gerer. 
+Eventuellement ajouter au templates des pages "articles" un lien vers le page mere :/
+
+D'ailleurs sa change aussi les adresses des pages, et je pense que c'est pas mal

@@ -13,8 +13,8 @@
 </br>
 <?php echo "Cout :" ;echo $donnee['Cout']; ?>
 <?php 
+echo "</br>";
 if($donnee['Cout_par_tour'] != 0){
-    echo "</br>";
     echo "Cout par tour : ";
     echo $donnee['Cout_par_tour'];
     echo "</br>";
@@ -27,12 +27,16 @@ if($donnee['Cout_par_tour'] != 0){
 
 <?php 
 $rarete->execute(array(':num' => $donnee['rarete']) ); 
-        
+        echo "</br>";
         echo $rarete->fetch()['Rarete'];
 ?>
     <ul style="list-style-type:none">
     <?php
-    
+    echo '<div class="su-spoiler su-spoiler-style-fancy su-spoiler-icon-plus-circle su-spoiler-closed" data-anchor="ecoles">
+    <div class="su-spoiler-title" tabindex="0" role="button"><span class="su-spoiler-icon">
+    </span>Ecoles </div>';
+
+    echo '<div class="su-spoiler-content su-clearfix">';
     
     $succes = $ecole->execute(array(':num' => $donnee['ID'])); 
     while($nom_ecole = $ecole->fetch()['Nom']){
@@ -40,6 +44,9 @@ $rarete->execute(array(':num' => $donnee['rarete']) );
         echo $nom_ecole;
         echo "</li>";
     } 
+    
+    echo '</div>';
+    echo '</div>';
                             
     ?></ul>
 </br>

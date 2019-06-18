@@ -1,6 +1,6 @@
 <?php
 /**
- * The default template for displaying content
+ * Le template de quand on est en rédaction
  *
  * Used for both single and index/archive/search.
  *
@@ -40,21 +40,28 @@
 	<div class="entry-content">
 		<?php
 			/* translators: %s: Name of current post */
-			the_content(
+			/*the_content(
 				sprintf(
 					__( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'twentythirteen' ),
 					the_title( '<span class="screen-reader-text">', '</span>', false )
 				)
-			);
+			);*/
 
-			wp_link_pages(
+			/*wp_link_pages(
 				array(
 					'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'twentythirteen' ) . '</span>',
 					'after'       => '</div>',
 					'link_before' => '<span>',
 					'link_after'  => '</span>',
 				)
-			);
+			);*/
+            echo "<p> Cette page est en cours de redaction, il peux n'y avoir rien, ou des tas de choses mais il manque encore quelque chose pour qu'elle soit enfin visible au grand public :) </p>";
+            echo "La derniere modifiction date du : "; 
+            the_modified_date();
+            $content = get_post_field( 'post_content', get_the_ID());
+            $word_count = str_word_count( strip_tags( $content ) );
+            echo "</br>Cette article fait : " . $word_count . " mots";
+            
             
 		?>
 	</div><!-- .entry-content -->
